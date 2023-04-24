@@ -29,4 +29,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: rahatullah123/New:v3
+          tags: rahatullah123/new:v3
