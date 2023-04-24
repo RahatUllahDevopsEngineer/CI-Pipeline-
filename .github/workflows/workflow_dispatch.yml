@@ -1,0 +1,11 @@
+name: workflow_dispatch
+on: workflow_dispatch
+
+jobs:
+  Build_Image_through_Docker_1:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Image Through Docker 
+      run: docker build -t dockerimage1 .
