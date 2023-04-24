@@ -1,0 +1,24 @@
+
+name: One_Jobs_dependent_Another_Job
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  Build_Image_through_Docker_1:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Image Through Docker 
+      run: docker build -t dockerimage1 .
+  Build_Image_through_Docker_2:
+
+    runs-on: ubuntu-latest
+    needs:  Build_Image_through_Docker_1
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Image Through Docker 
+      run: docker build -t dockerimage2 .
