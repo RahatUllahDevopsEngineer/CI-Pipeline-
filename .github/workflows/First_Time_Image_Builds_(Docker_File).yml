@@ -1,0 +1,16 @@
+
+name: First_Time_Image_Builds_(Docker_File)
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  Build_Image_Docker_File:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Image Docker Files
+      run: docker build . --file dockerfile --tag my_image:$(date +%s)
