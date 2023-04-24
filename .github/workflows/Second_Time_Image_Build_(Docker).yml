@@ -1,0 +1,16 @@
+
+name: Second_Time_Image_Build_(Docker)
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  Build_Image_through_Dockers:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Image Through Docker 
+      run: docker build -t dockerimage1 .
