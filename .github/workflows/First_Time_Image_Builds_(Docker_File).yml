@@ -1,5 +1,5 @@
 
-name: First_Time_Image_Builds_(Docker_File)
+name: First_Time_Image_Builds_(Docker_File).
 on:
   push:
     branches: [ "master" ]
