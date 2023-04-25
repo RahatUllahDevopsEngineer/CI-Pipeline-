@@ -22,6 +22,10 @@ jobs:
       -
         name: Expression
         run: echo ${{github.sha}}
+        
+      -
+        name: Branch Name
+        run: echo running on branch ${GITHUB_REF##*/}
       -
         name: Login Docker Hub
         uses: docker/login-action@v2
